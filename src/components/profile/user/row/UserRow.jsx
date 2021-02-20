@@ -10,10 +10,10 @@ const UserRow = () => {
             <div className={c.right}>
                 <div className={c.name}>Kirtr K.</div>
                 <div className={c.stat}>
-                    <div className={c.row_1}>Date:</div>
-                    <div className={c.row_1}>City:</div>
-                    <div className={c.row_1}>Education:</div>
-                    <div className={c.row_1}>Site:</div>
+                    <div className={c.row_1}><strong>Date:</strong> 01.01.2001</div>
+                    <div className={c.row_1}><strong>City:</strong> Alex-city</div>
+                    <div className={c.row_1}><strong>Education:</strong> garverd</div>
+                    <div className={c.row_1}><strong>Site:</strong> microsoft</div>
                 </div>
             </div>
         </div>

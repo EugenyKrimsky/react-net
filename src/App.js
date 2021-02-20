@@ -3,6 +3,7 @@ import './index.css';
 import Header from './components/header/Header'
 import Nav from './components/nav/Nav'
 import Profile from './components/profile/Profile'
+import Dialogs from './components/dialogs/Dialogs'
 
 function App() {
   return (
