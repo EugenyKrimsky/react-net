@@ -1,0 +1,17 @@
+.user_row {
+    grid-column: span 5;
+    grid-row: span 5;
+    display: flex;
+    justify-content: flex-start;
+    grid-gap: 60px;
+  }
+  .ava {
+    width: 120px;
+    height: 120px;
+  }
+  .name {
+    font-size: 19px;
+  }
+  .stat {
+    font-size: 25px;
+  }

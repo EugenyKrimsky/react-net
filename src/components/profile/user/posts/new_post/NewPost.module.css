@@ -1,0 +1,19 @@
+.new_post_row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 6px;
+}
+.new_post_row textarea {
+    grid-column: 1 / 5;
+    width: 100%;
+    height: 60px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+.new_post_row button {
+    grid-column-end: -1;
+  }

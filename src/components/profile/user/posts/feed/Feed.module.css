@@ -1,0 +1,8 @@
+.posts_feed {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 15px;
+}
+.right {
+    margin: 20px;
+}

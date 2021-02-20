@@ -1,0 +1,14 @@
+.post {
+    display: flex;
+    grid-gap: 10px;
+}
+.left {
+    width: 3px;
+    height: 30px;
+    background: rgb(15, 190, 94);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
