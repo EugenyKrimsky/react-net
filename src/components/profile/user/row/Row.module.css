@@ -1,5 +1,5 @@
 .user_row {
-    grid-column: span 5;
+    grid-column: span 1;
     grid-row: span 5;
     display: flex;
     justify-content: flex-start;
@@ -8,7 +8,12 @@
   .ava {
     width: 120px;
     height: 120px;
-  }
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
   .name {
     font-size: 19px;
   }

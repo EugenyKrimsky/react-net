@@ -1,13 +1,1 @@
-.profile {
-  grid-template-rows: 1fr;
-  display: grid;
-  grid-template-rows: 290px 1fr;
-  grid-gap: 6px;
-}
-.panorama {
-  width: 100%;
-}
-.user {
-    grid-template-rows: span 2;
-  }
 

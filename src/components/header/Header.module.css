@@ -3,7 +3,12 @@
     display: grid;
     grid-template:  1fr / 35px 48px 1fr;
     background: rgb(32, 196, 147);
-  }
+    border-radius:0 0 10px 10px  ;
+    -webkit-border-radius:0 0 10px 10px  ;
+    -moz-border-radius:0 0 10px 10px  ;
+    -ms-border-radius:0 0 10px 10px  ;
+    -o-border-radius:0 0 10px 10px  ;
+}
   .logo {
     grid-column-start: 2;
     align-self: center;

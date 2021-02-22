@@ -1,5 +1,5 @@
 import React from 'react'
-import c from './UserRow.module.css'
+import c from './Row.module.css'
 
 const UserRow = () => {
     return (

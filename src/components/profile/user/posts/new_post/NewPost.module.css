@@ -6,7 +6,7 @@
 .new_post_row textarea {
     grid-column: 1 / 5;
     width: 100%;
-    height: 60px;
+    height: 100px;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -16,4 +16,12 @@
 }
 .new_post_row button {
     grid-column-end: -1;
-  }
+    height: 26px;
+    background: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 105, 70);
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
