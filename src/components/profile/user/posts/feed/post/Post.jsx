@@ -7,7 +7,7 @@ const Post = (props) => {
             <div className={c.left}>
             </div>
             <div className={c.right}>
-                <div className={c.text}>Why {props.name} doesn't love me</div>
+                <div className={c.text}>{props.text}</div>
             </div>
         </div>
     )

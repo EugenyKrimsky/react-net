@@ -4,12 +4,12 @@ import NewPost from './user/posts/new_post/NewPost'
 import Feed from './user/posts/feed/Feed'
 import c from './Profile.module.css'
 
-const Profile = () => {
+const Profile = (props) => {
     return (
         <div className={c.profile}>
             <Row />
             <NewPost />
-            <Feed />
+            <Feed posts={props.posts}/>
         </div>
     )
 }

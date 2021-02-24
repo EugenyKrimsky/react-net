@@ -1,7 +1,8 @@
 .header {
     grid-area: h;
     display: grid;
-    grid-template:  1fr / 35px 48px 1fr;
+    grid-template:  1fr / 2fr 13fr 2fr;;
+    grid-gap: 1em;
     background: rgb(32, 196, 147);
     border-radius:0 0 10px 10px  ;
     -webkit-border-radius:0 0 10px 10px  ;
@@ -9,8 +10,12 @@
     -ms-border-radius:0 0 10px 10px  ;
     -o-border-radius:0 0 10px 10px  ;
 }
+.logotext {
+  grid-column-start: 2;
+  display: flex;
+  grid-gap: 10px;
+}
   .logo {
-    grid-column-start: 2;
     align-self: center;
     width: 40px;
     height: 40px;
@@ -21,6 +26,6 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
   }
-  .tittle {
-    align-self: center;
-  }
+h1 {
+  align-self: center;
+}

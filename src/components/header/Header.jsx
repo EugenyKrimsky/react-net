@@ -5,10 +5,8 @@ import c from './Header.module.css'
 const Header = () => {
     return (
         <header className={`${c.header} section`}>
-            <div className={c.logo}>
-
-            </div>
-            <div className={c.tittle}>
+            <div className={c.logotext}>
+                <div className={c.logo}></div>
                 <h1>Topnet</h1>
             </div>
         </header>)

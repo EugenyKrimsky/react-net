@@ -1,0 +1,17 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    column-gap: 50px;
+}
+a {
+    color: rgb(121, 121, 121);
+    text-decoration: none;
+}
+.left {
+    display: grid;
+    grid-auto-rows: 60px;
+    row-gap: 10px;
+}
+.right {
+    display: grid;
+}

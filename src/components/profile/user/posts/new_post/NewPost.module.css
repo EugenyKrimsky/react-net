@@ -18,10 +18,17 @@
     grid-column-end: -1;
     height: 26px;
     background: rgb(255, 255, 255);
-    border: 2px solid rgb(0, 105, 70);
+    border: 2px solid rgb(32, 196, 147);
     border-radius: 50px;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.new_post_row button:hover {
+    background: rgb(32, 196, 147);
+    cursor: pointer;
+    
 }

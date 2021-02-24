@@ -11,23 +11,20 @@ code {
 }
 
 .container {
-  width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
   display: grid;
   grid-template : 
-  "h h" 
-  "n p";
-  grid-template-columns: 2fr 11fr;
+  "h h h h" 
+  ". n p .";
+  grid-template-columns: 2fr 2fr 11fr 2fr;
   grid-template-rows: 70px 1fr;
   grid-gap: 1em;
 }
 .section {
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
 }
 header {
   border-radius: 20px;
@@ -42,6 +39,7 @@ header {
   padding: 0;
 }
 .wrapper {
+  grid-column: 3;
   display: grid;
   grid-gap: 1em;
 }
