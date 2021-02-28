@@ -1,8 +1,12 @@
-.nav {
+.sidebar {
   grid-area: n;
   background: rgb(32, 196, 147);
   display: grid;
-  grid-template-columns: 35px 1fr 10px;
+  grid-template: 1fr 1fr / 1fr;
+}
+.nav {
+  display: grid;
+  grid-template-columns: 35px 1fr 40px;
   grid-template-rows: repeat(5, 45px);
 }
 .item {

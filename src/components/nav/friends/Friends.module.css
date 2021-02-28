@@ -1,0 +1,16 @@
+.block {
+    padding-top: 30px;
+    display: grid;
+    grid-template: 30px 1fr / 35px 1fr 40px;
+    grid-row-gap: 5px;
+}
+h5 {
+    font-size: 20px;
+    grid-column: 2;
+}
+.friends {
+    grid-column: 2;
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    grid-gap: 5px;
+}

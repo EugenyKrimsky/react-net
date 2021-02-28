@@ -9,7 +9,7 @@ const Profile = (props) => {
         <div className={c.profile}>
             <Row />
             <NewPost />
-            <Feed posts={props.posts}/>
+            <Feed posts={props.state.posts}/>
         </div>
     )
 }

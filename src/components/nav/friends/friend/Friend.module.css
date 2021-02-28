@@ -1,0 +1,14 @@
+.item {
+    width: 50px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ava {
+    width: 30px;
+    height: 30px;
+}
+p {
+    color: #000;
+}
