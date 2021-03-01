@@ -14,7 +14,7 @@ code {
   display: grid;
   grid-template : 
   "h h h h" 
-  ". n p .";
+  ". n p ."; 
   grid-template-columns: 2fr 2fr 11fr 2fr;
   grid-template-rows: 70px 1fr;
   grid-gap: 1em;
@@ -26,13 +26,7 @@ code {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
 }
-header {
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-}
+
 
 * {
   margin: 0;

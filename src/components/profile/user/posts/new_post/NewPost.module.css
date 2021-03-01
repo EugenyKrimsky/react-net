@@ -1,7 +1,8 @@
 .new_post_row {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 6px;
+    grid-template: 30px 1fr 30px / repeat(3, 1fr);
+    grid-row-gap: 6px;
+    margin-bottom: 6px;
 }
 .new_post_row textarea {
     grid-column: 1 / 5;
@@ -15,7 +16,11 @@
     resize: none;
 }
 .new_post_row button {
+    color:rgb(32, 196, 147);
     grid-column-end: -1;
+    grid-row-end: -1;
+    width: 60px;
+    justify-self: end;
     height: 26px;
     background: rgb(255, 255, 255);
     border: 2px solid rgb(32, 196, 147);
@@ -25,10 +30,9 @@
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
     font-size: 18px;
-    font-weight: 700;
 }
 .new_post_row button:hover {
     background: rgb(32, 196, 147);
     cursor: pointer;
-    
+    color: white;
 }

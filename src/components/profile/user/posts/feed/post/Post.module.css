@@ -1,14 +1,25 @@
 .post {
-    display: flex;
+    display: grid;
+    grid-template: 1fr / 3px 45px 1fr;
     grid-gap: 10px;
+    border-radius: 3px;
+    border: 1px solid rgb(228, 228, 228);
+    border-left: none;
+    border-bottom: none;
+    padding-top: 10px;
 }
 .left {
     width: 3px;
-    height: 30px;
+    height: 70px;
     background: rgb(32, 196, 147);
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+}
+img {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
 }

@@ -11,6 +11,6 @@ h5 {
 .friends {
     grid-column: 2;
     display: grid;
-    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    grid-template: repeat(2, 70px) / repeat(3, 1fr);
     grid-gap: 5px;
 }

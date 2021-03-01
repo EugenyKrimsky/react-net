@@ -1,0 +1,8 @@
+.sidebar {
+  height: 500px;
+  grid-area: n;
+  grid-row: 2;
+  background: rgb(32, 196, 147);
+  display: grid;
+  grid-template: 1fr 1fr / 1fr;
+}

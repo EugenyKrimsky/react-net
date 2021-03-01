@@ -2,9 +2,9 @@ import React from 'react'
 import {BrowserRouter, Route} from 'react-router-dom'
 import './index.css';
 import Header from './components/header/Header'
-import Nav from './components/nav/Nav'
+import SideBar from './components/side_bar/SideBar'
 import Profile from './components/profile/Profile'
-import Dialogs from './components/dialogs/Dialogs'
+import Dialogs from './components/messages/Dialogs'
 import News from './components/news/News'
 import Music from './components/music/Music'
 import Settings from './components/settings/Settings'
@@ -14,10 +14,10 @@ function App(props) {
     <BrowserRouter>
       <div className="container">
         <Header />
-        <Nav state={props.state.sideBar}/>
+        <SideBar state={props.state.sideBar}/>
         <div className="wrapper">
-          <Route path="/dialogs" render={ () => <Dialogs state={props.state.dialogsPage}/>}/>
-          <Route path="/profile" render={ () => <Profile state={props.state.profilePage}/>}/>
+          <Route path="/messages" render={ () => <Dialogs state={props.state.dialogsPage}/>}/>
+          <Route path="/profile" render={ () => <Profile state={props.state.profilePage} addPost={props.addPost}/>}/>
           <Route path="/news"component={News}/>
           <Route path="/music"component={Music}/>
           <Route path="/settings"component={Settings}/>

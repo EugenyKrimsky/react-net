@@ -4,7 +4,7 @@ import c from './Header.module.css'
 
 const Header = () => {
     return (
-        <header className={`${c.header} section`}>
+        <header className={`${c.header}`}>
             <div className={c.logotext}>
                 <div className={c.logo}></div>
                 <h1>Topnet</h1>

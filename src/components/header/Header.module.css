@@ -4,11 +4,6 @@
     grid-template:  1fr / 2fr 13fr 2fr;;
     grid-gap: 1em;
     background: rgb(32, 196, 147);
-    border-radius:0 0 10px 10px  ;
-    -webkit-border-radius:0 0 10px 10px  ;
-    -moz-border-radius:0 0 10px 10px  ;
-    -ms-border-radius:0 0 10px 10px  ;
-    -o-border-radius:0 0 10px 10px  ;
 }
 .logotext {
   grid-column-start: 2;

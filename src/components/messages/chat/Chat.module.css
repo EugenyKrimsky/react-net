@@ -1,0 +1,28 @@
+.chat {
+    display: grid;
+    grid-template: 1fr 60px / 1fr;
+    border: 1px solid rgb(207, 207, 207);
+    border-radius: 3px;
+}
+.messages {
+
+}
+.my_message {
+    display: grid;
+    grid-template: 1fr / 1fr 50px;
+}
+textarea {
+    resize: none;
+    border: none;
+    border-top: 1px solid rgb(207, 207, 207);
+    border-radius: 0 0 3px 3px; 
+}
+button {
+    font-size: 30px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    background: rgb(32, 196, 147);
+    border: none;
+    box-sizing: border-box;
+}
