@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {addPost} from './redux/state';
+import {addPost, upgradeNewPostText} from './redux/state';
 import {BrowserRouter} from 'react-router-dom';
 
-export const rerenderDOM = (state) => {
+export const rerenderDOM = (props) => {
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App state={state} addPost={addPost}/>
+        <App state={props} addPost={addPost} upgradeNewPostText={upgradeNewPostText}/>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')

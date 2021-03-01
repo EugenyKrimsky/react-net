@@ -7,6 +7,7 @@ const state = {
             { id: 1, likesCount: 16, text: 'why avril lavigne doesn\'t love me' },
             { id: 2, likesCount: 19, text: 'why helly williams doesn\'t love me' }
         ],
+        newPostText: 'opa'
     },
     dialogsPage: {
         messages: [
@@ -46,14 +47,21 @@ const state = {
     
 }
 
-export const addPost = (message) => {
+export const addPost = () => {
     const post = {
         id: state.profilePage.posts.length,
         likesCount: 0, 
-        text: message
+        text: state.profilePage.newPostText
     }
 
     state.profilePage.posts.push(post);
+    state.profilePage.newPostText = '';
+    rerenderDOM(state);
+    
+}
+
+export const upgradeNewPostText = (text) => {
+    state.profilePage.newPostText = text;
     rerenderDOM(state);
 }
 
