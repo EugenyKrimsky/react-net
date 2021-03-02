@@ -1,4 +1,4 @@
-import {rerenderDOM} from './../render'
+let rerenderDOM;
 
 const state = {
     profilePage: {
@@ -56,13 +56,19 @@ export const addPost = () => {
 
     state.profilePage.posts.push(post);
     state.profilePage.newPostText = '';
-    rerenderDOM(state);
+    rerenderDOM();
     
 }
 
 export const upgradeNewPostText = (text) => {
     state.profilePage.newPostText = text;
-    rerenderDOM(state);
+    console.dir(state)
+    rerenderDOM();
+
+}
+
+export const getRenderFunction = (observer) => {
+    rerenderDOM = observer;
 }
 
 export default state
