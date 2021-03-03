@@ -7,7 +7,7 @@ const Feed = (props) => {
 
     return (
         <div className={c.posts_feed}>
-            {feed}
+            {feed.reverse()}
         </div>
     )
 }

@@ -17,7 +17,7 @@ function App(props) {
         <SideBar sidebar={props.store.getState().sideBar}/>
         <div className="wrapper">
           <Route path="/messages" render={ () => <Dialogs state={props.state.dialogsPage}/>}/>
-          <Route path="/profile" render={ () => <Profile profilePage={props.store.getState().profilePage} addPost={props.store.addPost.bind(props.store)} upgradeNewPostText={props.store.upgradeNewPostText.bind(props.store)} />}/>
+          <Route path="/profile" render={ () => <Profile profilePage={props.store.getState().profilePage} dispatch={props.store.dispatch.bind(props.store)} />}/>
           <Route path="/news"component={News}/>
           <Route path="/music"component={Music}/>
           <Route path="/settings"component={Settings}/>

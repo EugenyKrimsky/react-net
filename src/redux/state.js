@@ -49,27 +49,29 @@ const store = {
     getState() {
         return this._state
     },
-    addPost() {
-        const post = {
-            id: this._state.profilePage.posts.length,
-            likesCount: 0, 
-            text: this._state.profilePage.newPostText
-        }
-    
-        this._state.profilePage.posts.push(post);
-        this._state.profilePage.newPostText = '';
-        this._subscriber();
-        
-    },
-    upgradeNewPostText(text) {
-        this._state.profilePage.newPostText = text;
-        this._subscriber();
-    
-    },
     subscribe(observer) {
         this._subscriber = observer;
     },
-    _subscriber() {}
+    _subscriber() {},
+    dispatch(action) {
+        switch(action.type) {
+            case 'addPost':
+                const post = {
+                    id: this._state.profilePage.posts.length,
+                    likesCount: 0, 
+                    text: this._state.profilePage.newPostText
+                }
+            
+                this._state.profilePage.posts.push(post);
+                this._state.profilePage.newPostText = '';
+                this._subscriber();
+                break;
+            case 'upgradeNewPostText':
+                this._state.profilePage.newPostText = action.newPostText;
+                this._subscriber();
+                break;
+        }
+    },
 }
 
 export default store
