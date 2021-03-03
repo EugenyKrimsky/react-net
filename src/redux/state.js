@@ -1,3 +1,6 @@
+const ADD_POST = 'addPost';
+const UPGRADE_NEW_TEXT = 'upgradeNewText';
+
 const store = {
     _state: {
         profilePage: {
@@ -24,7 +27,8 @@ const store = {
                 { id: 4, name: 'Sasha' },
                 { id: 5, name: 'Victor' },
                 { id: 6, name: 'Valera' },
-            ]
+            ],
+            newMessageText: 'df'
         },
         sideBar: {
             links: [
@@ -66,12 +70,19 @@ const store = {
                 this._state.profilePage.newPostText = '';
                 this._subscriber();
                 break;
-            case 'upgradeNewPostText':
-                this._state.profilePage.newPostText = action.newPostText;
+            case 'upgradeNewText':
+                action.subType === 'post' ? 
+                    this._state.profilePage.newPostText = action.newText : 
+                    this._state.dialogsPage.newMessageText = action.newText;
                 this._subscriber();
                 break;
         }
     },
 }
+
+window.store = store
+
+export const actionCreatorAddPost = () => ({type: ADD_POST});
+export const actionCreatorUpgradeNewText = (subType, text) => ({type: UPGRADE_NEW_TEXT, subType: subType, newText: text})
 
 export default store

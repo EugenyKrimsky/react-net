@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter, Route} from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 import './index.css';
 import Header from './components/header/Header'
 import SideBar from './components/side_bar/SideBar'
@@ -14,13 +14,17 @@ function App(props) {
     <BrowserRouter>
       <div className="container">
         <Header />
-        <SideBar sidebar={props.store.getState().sideBar}/>
+        <SideBar sidebar={ props.store.getState().sideBar } />
         <div className="wrapper">
-          <Route path="/messages" render={ () => <Dialogs state={props.state.dialogsPage}/>}/>
-          <Route path="/profile" render={ () => <Profile profilePage={props.store.getState().profilePage} dispatch={props.store.dispatch.bind(props.store)} />}/>
-          <Route path="/news"component={News}/>
-          <Route path="/music"component={Music}/>
-          <Route path="/settings"component={Settings}/>
+          <Route path="/messages" render={ () => <Dialogs 
+                                                  dialogsPage={ props.store.getState().dialogsPage } 
+                                                  dispatch={props.store.dispatch.bind(props.store)} />}/>
+          <Route path="/profile" render={ () => <Profile 
+                                                  profilePage={props.store.getState().profilePage} 
+                                                  dispatch={props.store.dispatch.bind(props.store)} />}/>
+          <Route path="/news"component={News} />
+          <Route path="/music"component={Music} />
+          <Route path="/settings"component={Settings} />
         </div>
       </div>
     </BrowserRouter>

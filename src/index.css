@@ -3,6 +3,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+    min-height:100vh;
 }
 
 code {
@@ -18,6 +19,7 @@ code {
   grid-template-columns: 2fr 2fr 11fr 2fr;
   grid-template-rows: 70px 1fr;
   grid-gap: 1em;
+  min-height: 80vh;
 }
 .section {
   border-radius: 3px;

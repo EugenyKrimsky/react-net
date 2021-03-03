@@ -1,11 +1,17 @@
 import React from 'react'
+import { actionCreatorUpgradeNewText } from '../../../redux/state';
 import c from './Chat.module.css'
 import Message from './messages/Message'
 
-const Chat = () => {
-    let message = React.createRef();
+const Chat = (props) => {
+    const message = React.createRef();
 
-    const send = () => {
+    const updateNewMessage = () => {
+        const text = message.current.value;
+        props.dispatch(actionCreatorUpgradeNewText('message', text)); 
+    }
+
+    const sendMessage = () => {
         alert(message.current.value)
     }
 
@@ -13,8 +19,8 @@ const Chat = () => {
         <div className={c.chat}>
             <div className={c.messages}></div>
             <div className={c.my_message}>
-                <textarea ref={message} name="message"></textarea>
-                <button onClick={send}>+</button>
+                <textarea onChange={updateNewMessage} ref={message} name="message" value={props.dialogsPage.newMessageText} />
+                <button onClick={sendMessage}>+</button>
             </div>
             
         </div>
