@@ -1,74 +1,75 @@
-let rerenderDOM;
-
-const state = {
-    profilePage: {
-        posts: [
-            { id: 0, likesCount: 12, text: 'why dora doesn\'t love me' },
-            { id: 1, likesCount: 16, text: 'why avril lavigne doesn\'t love me' },
-            { id: 2, likesCount: 19, text: 'why helly williams doesn\'t love me' }
-        ],
-        newPostText: 'opa'
+const store = {
+    _state: {
+        profilePage: {
+            posts: [
+                { id: 0, likesCount: 12, text: 'why dora doesn\'t love me' },
+                { id: 1, likesCount: 16, text: 'why avril lavigne doesn\'t love me' },
+                { id: 2, likesCount: 19, text: 'why helly williams doesn\'t love me' }
+            ],
+            newPostText: 'opa'
+        },
+        dialogsPage: {
+            messages: [
+                { id: 1, message: 'Dima' },
+                { id: 2, message: 'Andrew' },
+                { id: 3, message: 'Sveta' },
+                { id: 4, message: 'Sasha' }, 
+                { id: 5, message: 'Victor' },
+                { id: 6, message: 'Valera' },
+            ],
+            dialogs: [
+                { id: 1, name: 'Dima' },
+                { id: 2, name: 'Andrew' },
+                { id: 3, name: 'Sveta' },
+                { id: 4, name: 'Sasha' },
+                { id: 5, name: 'Victor' },
+                { id: 6, name: 'Valera' },
+            ]
+        },
+        sideBar: {
+            links: [
+                { name: 'profile' },
+                { name: 'messages' },
+                { name: 'news' },
+                { name: 'music' },
+                { name: 'settings' }
+            ],
+            friends: [
+                { id: 1, name: 'Dima' },
+                { id: 2, name: 'Andrew' },
+                { id: 3, name: 'Sveta' },
+                { id: 4, name: 'Sasha' },
+                { id: 5, name: 'Victor' },
+                { id: 6, name: 'Valera' }
+            ]
+        }
+        
     },
-    dialogsPage: {
-        messages: [
-            { id: 1, message: 'Dima' },
-            { id: 2, message: 'Andrew' },
-            { id: 3, message: 'Sveta' },
-            { id: 4, message: 'Sasha' }, 
-            { id: 5, message: 'Victor' },
-            { id: 6, message: 'Valera' },
-        ],
-        dialogs: [
-            { id: 1, name: 'Dima' },
-            { id: 2, name: 'Andrew' },
-            { id: 3, name: 'Sveta' },
-            { id: 4, name: 'Sasha' },
-            { id: 5, name: 'Victor' },
-            { id: 6, name: 'Valera' },
-        ]
+    _rerenderDOM() {},
+    getState() {
+        return this._state
     },
-    sideBar: {
-        links: [
-            { name: 'profile' },
-            { name: 'messages' },
-            { name: 'news' },
-            { name: 'music' },
-            { name: 'settings' }
-        ],
-        friends: [
-            { id: 1, name: 'Dima' },
-            { id: 2, name: 'Andrew' },
-            { id: 3, name: 'Sveta' },
-            { id: 4, name: 'Sasha' },
-            { id: 5, name: 'Victor' },
-            { id: 6, name: 'Valera' }
-        ]
-    }
+    addPost() {
+        const post = {
+            id: this._state.profilePage.posts.length,
+            likesCount: 0, 
+            text: this._state.profilePage.newPostText
+        }
     
-}
-
-export const addPost = () => {
-    const post = {
-        id: state.profilePage.posts.length,
-        likesCount: 0, 
-        text: state.profilePage.newPostText
-    }
-
-    state.profilePage.posts.push(post);
-    state.profilePage.newPostText = '';
-    rerenderDOM();
+        this._state.profilePage.posts.push(post);
+        this._state.profilePage.newPostText = '';
+        this._subscriber();
+        
+    },
+    upgradeNewPostText(text) {
+        this._state.profilePage.newPostText = text;
+        this._subscriber();
     
+    },
+    subscribe(observer) {
+        this._subscriber = observer;
+    },
+    _subscriber() {}
 }
 
-export const upgradeNewPostText = (text) => {
-    state.profilePage.newPostText = text;
-    console.dir(state)
-    rerenderDOM();
-
-}
-
-export const getRenderFunction = (observer) => {
-    rerenderDOM = observer;
-}
-
-export default state
+export default store
