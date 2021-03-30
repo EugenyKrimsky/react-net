@@ -1,10 +1,6 @@
 import dialogsReducer from "./dialogsReducer";
 import profileReducer from "./profileReducer";
 
-const ADD_POST = 'addPost';
-const UPGRADE_NEW_TEXT = 'upgradeNewText';
-const SEND_MESSAGE = 'sendMessage';
-
 const store = {
 	_state: {
 		profilePage: {

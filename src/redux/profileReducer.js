@@ -1,7 +1,16 @@
 const UPGRADE_NEW_TEXT = 'upgradeNewText';
 const ADD_POST = 'addPost';
 
-const profileReducer = (state, action) => {
+const initialState = {
+  posts: [
+    { id: 0, likesCount: 12, text: 'why dora doesn\'t love me' },
+    { id: 1, likesCount: 16, text: 'why avril lavigne doesn\'t love me' },
+    { id: 2, likesCount: 19, text: 'why helly williams doesn\'t love me' }
+  ],
+  newPostText: 'opa'
+};
+
+const profileReducer = (state = initialState, action) => {
   switch(action.type) {
     case UPGRADE_NEW_TEXT:
       state.newPostText = action.newText;
