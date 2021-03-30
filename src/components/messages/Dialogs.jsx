@@ -5,9 +5,10 @@ import Chat from './chat/Chat'
 import Message from './chat/message/Message'
 
 const Dialogs = (props) => {
-	const dialogsElements = props.dialogsPage.dialogs.map(d => <Dialog id={d.id} name={d.name}/> );
-	const messagesElements = props.dialogsPage.messages.map(m => <Message id={m.id} messages={m.text}/>);
-
+	const dialogsElements = props.dialogsPage.dialogs.map(d => <Dialog id={d.id} name={d.name}/>);
+	
+	const messagesElements = props.dialogsPage.messages.map(m => <Message id={m.id} text={m.text}/>);
+	console.log(messagesElements)
 	return (
 		<div className={c.dialogs}>
 			<Chat className={c.right} dispatch={props.dispatch} dialogsPage={props.dialogsPage} messages={messagesElements}/> 

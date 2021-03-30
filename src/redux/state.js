@@ -1,3 +1,6 @@
+import dialogsReducer from "./dialogsReducer";
+import profileReducer from "./profileReducer";
+
 const ADD_POST = 'addPost';
 const UPGRADE_NEW_TEXT = 'upgradeNewText';
 const SEND_MESSAGE = 'sendMessage';
@@ -14,12 +17,12 @@ const store = {
 		},
 		dialogsPage: {
 			messages: [
-				{ id: 1, message: 'Dima' },
-				{ id: 2, message: 'Andrew' },
-				{ id: 3, message: 'Sveta' },
-				{ id: 4, message: 'Sasha' }, 
-				{ id: 5, message: 'Victor' },
-				{ id: 6, message: 'Valera' },
+				{ id: 1, text: 'Dima' },
+				{ id: 2, text: 'Andrew' },
+				{ id: 3, text: 'Sveta' },
+				{ id: 4, text: 'Sasha' }, 
+				{ id: 5, text: 'Victor' },
+				{ id: 6, text: 'Valera' },
 			],
 			dialogs: [
 				{ id: 1, name: 'Dima' },
@@ -59,48 +62,13 @@ const store = {
 	},
 	_subscriber() {},
 	dispatch(action) {
-		switch(action.type) {
-			case 'addPost':
-				const post = {
-					id: this._state.profilePage.posts.length,
-					likesCount: 0, 
-					text: this._state.profilePage.newPostText
-				}
-				
-				this._state.profilePage.posts.push(post);
-				this._state.profilePage.newPostText = '';
+		this._state.profilePage = profileReducer(this._state.profilePage, action);
+		this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
 
-				this._subscriber();
-				break;
-			case 'upgradeNewText':
-				action.subType === 'post' ? 
-					this._state.profilePage.newPostText = action.newText : 
-					this._state.dialogsPage.newMessageText = action.newText;
-
-				this._subscriber();
-				break;
-			case 'sendMessage':
-				const message = {
-					id: 5,
-					text: this._state.dialogsPage.newMessageText,
-				}
-
-				this._state.dialogsPage.messages.push(message);
-				this._state.dialogsPage.newMessageText = '';
-
-				this._subscriber();
-				break;
-		}
+		this._subscriber();
 	},
 }   
 
 window.store = store
-
-export const actionCreatorAddPost = () => ({type: ADD_POST});
-
-export const actionCreatorUpgradeNewText = (subType, text) => 
-	({type: UPGRADE_NEW_TEXT, subType: subType, newText: text});
-
-export const actionCreatorSendMessage = () => ({type: SEND_MESSAGE});
 
 export default store   

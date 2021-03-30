@@ -1,5 +1,5 @@
 import React from 'react'
-import { actionCreatorSendMessage, actionCreatorUpgradeNewText } from '../../../redux/state';
+import { actionCreatorSendMessage, actionCreatorUpgradeNewText } from '../../../redux/dialogsReducer';
 import c from './Chat.module.css'
 import Message from './message/Message'
 
@@ -17,7 +17,9 @@ const Chat = (props) => {
 
   return (
     <div className={c.chat}>
-        <div className={c.messages}>{props.messages}</div>
+        <div className={c.messages}>
+					{props.messages}
+				</div>
         <div className={c.my_message}>
           <textarea onChange={updateNewMessage} ref={message} name="message" value={props.dialogsPage.newMessageText} />
           <button onClick={sendMessage}>+</button>
