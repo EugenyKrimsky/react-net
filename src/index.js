@@ -21,5 +21,4 @@ rerenderDOM();
   
 store.subscribe(rerenderDOM);
 
-
 reportWebVitals();
